@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sabor & Arte | Restaurante</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand-mark">S&A</span><span>Sabor <i>&</i> Arte<small>RESTAURANTE</small></span></a>
+  <nav><a href="#inicio">Inicio</a><a href="#menu">Menú</a><a href="#reservas">Reservaciones</a><a href="#pedidos">Pedidos</a></nav>
+  <a class="cart-link" href="#pedidos">Mi pedido <b id="cartCount">0</b></a>
+</header>
+<main>
+  <section class="hero" id="inicio">
+    <div class="hero-copy"><span class="eyebrow">SABORES QUE NOS UNEN</span><h1>Un buen momento<br><em>comienza en la mesa.</em></h1><p>Ingredientes frescos, recetas con cariño y una experiencia hecha para compartir.</p><a class="btn" href="#menu">Explorar menú <span>→</span></a></div>
+    <div class="hero-image"><img src="/images/pizza.svg" alt="Pizza artesanal"></div>
+  </section>
+
+  <section class="section" id="menu">
+    <div class="section-heading"><div><span class="eyebrow">NUESTRA COCINA</span><h2>Un menú para disfrutar</h2></div><p>Encuentra tu próximo favorito.</p></div>
+    <div class="filters">
+      <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Buscar platillo..."></label>
+      <select id="categoryFilter"><option value="todos">Todas las categorías</option></select>
+    </div>
+    <div id="menuGrid" class="menu-grid"><p class="loading">Cargando menú...</p></div>
+  </section>
+
+  <section class="reservation section" id="reservas">
+    <div><span class="eyebrow">TE ESPERAMOS</span><h2>Reserva tu mesa</h2><p>Planea tu visita y disfruta de Sabor & Arte.</p></div>
+    <form id="reservationForm" class="form-card">
+      <input name="nombre" placeholder="Nombre completo" required>
+      <div class="two"><input name="telefono" placeholder="Teléfono"><input name="correo" type="email" placeholder="Correo"></div>
+      <div class="two"><input name="fecha_reserva" type="datetime-local" required><select name="id_mesa" id="tableSelect" required><option value="">Selecciona mesa</option></select></div>
+      <input name="numero_personas" type="number" min="1" max="12" placeholder="Número de personas" required>
+      <button class="btn" type="submit">Confirmar reservación</button><p class="form-message" id="reservationMessage"></p>
+    </form>
+  </section>
+
+  <section class="section order-section" id="pedidos">
+    <div class="section-heading"><div><span class="eyebrow">PARA LLEVAR O DISFRUTAR</span><h2>Finaliza tu pedido</h2></div></div>
+    <div class="order-layout">
+      <div id="cartItems" class="cart-items"><p class="muted">Agrega productos desde el menú.</p></div>
+      <form id="orderForm" class="form-card">
+        <h3>Datos del cliente</h3><input name="nombre" placeholder="Nombre completo" required>
+        <input name="telefono" placeholder="Teléfono"><input name="correo" type="email" placeholder="Correo">
+        <div class="total-row"><span>Total</span><strong id="cartTotal">$0.00</strong></div>
+        <button class="btn" type="submit">Enviar pedido</button><p class="form-message" id="orderMessage"></p>
+      </form>
+    </div>
+  </section>
+</main>
+<footer><a class="brand" href="#"><span class="brand-mark">S&A</span><span>Sabor <i>&</i> Arte<small>RESTAURANTE</small></span></a><p>Hecho con cariño para compartir buenos momentos.</p><small>© 2026 Sabor & Arte Restaurante</small></footer>
+<div id="toast" class="toast"></div>
+<script src="/js/app.js"></script>
+</body></html>

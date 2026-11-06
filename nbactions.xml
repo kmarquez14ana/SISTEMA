@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+  <action>
+    <actionName>run</actionName>
+    <goals><goal>spring-boot:run</goal></goals>
+  </action>
+  <action>
+    <actionName>debug</actionName>
+    <goals><goal>spring-boot:run</goal></goals>
+    <properties><spring-boot.run.jvmArguments>-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=localhost:5005</spring-boot.run.jvmArguments></properties>
+  </action>
+  <action>
+    <actionName>clean</actionName>
+    <goals><goal>clean</goal></goals>
+  </action>
+  <action>
+    <actionName>build</actionName>
+    <goals><goal>clean</goal><goal>package</goal></goals>
+  </action>
+</actions>
